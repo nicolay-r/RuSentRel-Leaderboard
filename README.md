@@ -34,10 +34,6 @@ For each document, it is required to complete a list of such entity pairs (e<sub
 for which text conveys the presence of sentiment relation from the *e<sub>s</sub>* (subject) towards an *e<sub>o</sub>* (object).
 Label assignation can be *neg* or *pos*. 
 
-The result assessment organized in experiments:
-* `3l` -- subject-object pairs extraction.
-* `2l` -- classification of already given subject-object pairs on document level;
-
 | Example                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ... При этом <ins>Москва</ins> неоднократно подчеркивала, что ее активность на <ins>балтике</ins> является ответом именно на действия **<ins>НАТО</ins>** и эскалацию враждебного подхода к **<ins>Росcии</ins>** вблизи ее восточных границ ... *(... Meanwhile <ins>Moscow</ins> has repeatedly emphasized that its activity in the <ins>Baltic Sea</ins> is a response precisely to actions of **<ins>NATO</ins>** and the escalation of the hostile approach to **<ins>Russia</ins>** near its eastern borders ...)*
@@ -54,14 +50,19 @@ We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes
 * BERT-based language models [[code]](https://github.com/nicolay-r/bert-for-attitude-extraction-with-ds);
 * Neural Networks with (and w/o) Attention mechanism [[code]](https://github.com/nicolay-r/neural-networks-for-attitude-extraction);
 * Conventional Machine Learning methods [[code]](https://github.com/nicolay-r/sentiment-relation-classifiers);
+
+[Back to Top](#contents)
  
 ## Leaderboard 
 
 Results ordered from the latest to the oldest. We measure `F1` (scaled by 100) across the following foldings (see [evaluator](#evaluator) section for greater details):
-
 * F1<sub>cv</sub> - the average `F1` of a 3-fold CV check; 
 foldings carried out by preserving the same number of sentences in each of them;
 * F<sub>t</sub> -- `F1` over the predefined TEST set;
+
+The result assessment organized in experiments:
+* `3l` -- subject-object pairs extraction.
+* `2l` -- classification of already given subject-object pairs on document level;
 
 |Methods       |F1<sub>cv</sub> (3l)  |F1<sub>t</sub> (3l)                    |F1<sub>cv</sub> (2l)   |F1<sub>t</sub> (2l)    |
 |--------------|------------|-----------------------------|-------------|-------------|
@@ -171,6 +172,7 @@ Source code exported from AREkit-0.21.1 library and yields of:
 * [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
 * [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
+[Back to Top](#contents)
 
 ## Related works
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
