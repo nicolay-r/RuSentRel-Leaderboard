@@ -57,7 +57,7 @@ We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes
  
 ## Leaderboard 
 
-Results ordered from the latest to the oldest
+Results ordered from the latest to the oldest. We measure `F1` (scaled by 100) across the following foldings (see [evaluator](#evaluator) section for greater details):
 
 * F1<sub>cv</sub> - the average `F1` of a 3-fold CV check; 
 foldings carried out by preserving the same number of sentences in each of them;
