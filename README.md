@@ -9,9 +9,11 @@ In total, 73 large analytical texts were labeled with about 2000 relations.
 
 This repository is an official results benchmark for automatic
 *sentiment attitude extraction* task within *RuSentRel* collection.
-Let's follow [task](#task) section for a greater details.
+Let's follow the [task](#task) section for greater details.
 
-**Contributing**: Please feel free to make pull requests, and at [Related Works](#related-works) section especially!
+**Contributing**: Please feel free to make pull requests, and at 
+[awesome-sentiment-attitude-extraction](https://github.com/nicolay-r/awesome-sentiment-attitude-extraction) 
+especially!
 
 > For more details about RuSentRel please proceed with the related [repository](https://github.com/nicolay-r/RuSentRel).
 
@@ -26,10 +28,10 @@ Let's follow [task](#task) section for a greater details.
 
 ## Task 
 
-Given a subset of documents in the RuSentRel collection, where each document 
+Given a subset of documents in the RuSentRel collection, where each document is
 presented by a pair: (1) text, (2) a list of selected named entities.
-For each document it is required to complete a list of such entity pairs (e<sub>s</sub>, e<sub>o</sub>), 
-for which text conveys the presence of sentiment relation from *e<sub>s</sub>* towards *e<sub>o</sub>*.
+For each document, it is required to complete a list of such entity pairs (e<sub>s</sub>, e<sub>o</sub>), 
+for which text conveys the presence of sentiment relation from the *e<sub>s</sub>* (subject) towards an *e<sub>o</sub>* (object).
 Label assignation can be *neg* or *pos*. 
 
 The result assessment organized in experiments:
@@ -41,23 +43,21 @@ The result assessment organized in experiments:
 | ... При этом <ins>Москва</ins> неоднократно подчеркивала, что ее активность на <ins>балтике</ins> является ответом именно на действия **<ins>НАТО</ins>** и эскалацию враждебного подхода к **<ins>Росcии</ins>** вблизи ее восточных границ ... *(... Meanwhile <ins>Moscow</ins> has repeatedly emphasized that its activity in the <ins>Baltic Sea</ins> is a response precisely to actions of **<ins>NATO</ins>** and the escalation of the hostile approach to **<ins>Russia</ins>** near its eastern borders ...)*
 | (NATO->Russia, neg), (Russia->NATO, neg)                                                                                                                                                                                                                    |
 
+Task paper: https://arxiv.org/pdf/1808.08932.pdf
+
 ## Approaches
 
-Considering as context classification task, where *context* is a text region with mentioned pair (attitude participants) in it.
-Then classified context-level attitudes transfers onto document-level by averaging context labels of the related pair (using voting method).
+The task is considered as a context classification problem, in which *context* is a text region with mentioned pair (attitude participants) in it.
+Then classified context-level attitudes transfers onto document-level by averaging context labels of the related pair (using the voting method).
 
 We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes a framework for the following applications:
 * BERT-based language models [[code]](https://github.com/nicolay-r/bert-for-attitude-extraction-with-ds);
 * Neural Networks with (and w/o) Attention mechanism [[code]](https://github.com/nicolay-r/neural-networks-for-attitude-extraction);
 * Conventional Machine Learning methods [[code]](https://github.com/nicolay-r/sentiment-relation-classifiers);
-
-<img align="left" width="100" height="60" src="https://github.com/nicolay-r/AREkit/blob/0.20.5-rc/logo.png?raw=true">
-<img align="left" width="100" height="60" src="https://github.com/nicolay-r/bert-utils-for-attitude-extraction/blob/master/logo.png?raw=true">
-<img align="left" width="100" height="60" src="https://github.com/nicolay-r/AREkit/blob/0.21.1-rc/arekit/contrib/networks/logo.png?raw=true">
  
 ## Leaderboard 
 
-The results ordered from the latest till the very beginning.
+Results ordered from the latest to the oldest
 
 * F1<sub>cv</sub> - the average `F1` of a 3-fold CV check; 
 foldings carried out by preserving the same number of sentences in each of them;
@@ -136,7 +136,6 @@ foldings carried out by preserving the same number of sentences in each of them;
 |Baseline (Random)                                 |7.4<sup>[\*](#footnote)</sup>         |8.0                          |             |             |
 |Baseline (Pos)                                    |3.9<sup>[\*](#footnote)</sup>         |4.0                          |             |             |
 |Baseline (Neg)                                    |5.2<sup>[\*](#footnote)</sup>         |5.0                          |             |             |
-|
 
 <a name="footnote">*</a>: Results that were not mentioned in papers.
 
@@ -148,19 +147,19 @@ algorithms. We obtained that F-measure of human labeling. [[1]](#link1)
 
 ### Neural Networks Optimization
 
-Traning process described in [Rusnachenko et. al., 2020](https://arxiv.org/abs/2006.13730) (section 7.1) and 
-relies on *Multi-Instance learning* approach, originally proposed in  [Zeng et. al., 2015](https://www.aclweb.org/anthology/D15-1203.pdf) paper. 
-(SGD application, bags teminology, instances selection within bags).
+The training process is described in [Rusnachenko et. al., 2020](https://arxiv.org/abs/2006.13730) (section 7.1) and 
+relies on the *Multi-Instance learning* approach, originally proposed in  [Zeng et. al., 2015](https://www.aclweb.org/anthology/D15-1203.pdf) paper. 
+(SGD application, bags terminology, instances selection within bags).
 All the batch context samples are gathered into *bags*.
 Authors propose to select the best instance in every bag as follows: 
-calculate `max` value of p(y<sub>i</sub>|m<sub>i</sub>,j) across i'th values within a particular j'th bag. 
-The latter allows them adopt `loss` function on bags level.
+calculate the `max` value of p(y<sub>i</sub>|m<sub>i</sub>,j) across i'th values within a particular j'th bag. 
+The latter allows them to adopt `loss` function on bags level.
 
-In our works we adopt bags for synonymous contexts gathering.
-Therefore, for gradients calculation within bags we choose `avg` function instead. 
-The assumption here is to consider other synonymous attitudes during gradiends calculation procedure.
+In our works, we adopt bags for synonymous context gathering.
+Therefore, for gradients calculation within bags, we choose `avg` function instead. 
+The assumption here is to consider other synonymous attitudes during the gradients calculation procedure.
 We use `BagSize > 1` in earlier work [Rusnachenko, 2018](https://github.com/nicolay-r/sentiment-pcnn/tree/clls-2018)
-In latest experiments we consider `BagSize = 1` and therefore don't exploit bag values averaging.
+In the latest experiments, we consider `BagSize = 1` and therefore don't exploit bag values averaging.
 
 [Back to Top](#contents)
 
@@ -168,9 +167,9 @@ In latest experiments we consider `BagSize = 1` and therefore don't exploit bag 
 
 ![](https://img.shields.io/badge/Python-3.6-brightgreen.svg)
 
-Source code exported from AREkit-0.21.1 library and yelds of: 
-* [Evaluation](evaluation) directory for greater details of the evaluator implementation and the related dependencies;
-* [Test](test) directory which includes test scripts that allows to apply evaluator for the archived [results](test/data).
+Source code exported from AREkit-0.21.1 library and yields of: 
+* [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
+* [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
 
 ## Related works
