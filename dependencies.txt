@@ -1,0 +1,3 @@
+pandas
+pymystem3
+tqdm
