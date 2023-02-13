@@ -90,7 +90,7 @@ class TestRuSentRelEvaluation(unittest.TestCase):
             read_result_collection_func=lambda doc_id: OpinionCollection(
                 opinions=ZippedResultsIOUtils.iter_doc_opinions(
                     doc_id=doc_id,
-                    result_version=res_version,
+                    filepath_or_version=res_version,
                     labels_formatter=labels_formatter),
                 synonyms=actual_synonyms,
                 error_on_duplicates=False,

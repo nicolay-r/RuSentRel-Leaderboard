@@ -7,24 +7,22 @@ import enum
 class ZipArchiveUtils(object):
 
     @staticmethod
-    def get_archive_filepath(version):
+    def get_archive_filepath(data):
         raise NotImplementedError()
 
     @classmethod
-    def iter_from_zip(cls, inner_path, process_func, version):
+    def iter_from_zip(cls, inner_path, process_func, zip_filepath_data):
         assert(isinstance(inner_path, str))
         assert(callable(process_func))
-        assert(isinstance(version, enum.Enum))
 
-        with zipfile.ZipFile(cls.get_archive_filepath(version.value), "r") as zip_ref:
+        with zipfile.ZipFile(cls.get_archive_filepath(zip_filepath_data), "r") as zip_ref:
             with zip_ref.open(inner_path, mode='r') as c_file:
                 for result in process_func(c_file):
                     yield result
 
     @classmethod
-    def iter_filenames_from_zip(cls, version):
-        assert(isinstance(version, enum.Enum))
-        with zipfile.ZipFile(cls.get_archive_filepath(version.value), "r") as zip_ref:
+    def iter_filenames_from_zip(cls, zip_filepath_data):
+        with zipfile.ZipFile(cls.get_archive_filepath(zip_filepath_data), "r") as zip_ref:
             return iter(zip_ref.namelist())
 
     @staticmethod

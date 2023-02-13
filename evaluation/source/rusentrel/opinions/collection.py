@@ -31,4 +31,4 @@ class RuSentRelOpinionCollection:
                 input_file=input_file,
                 labels_formatter=labels_fmt,
                 error_on_non_supported=True),
-            version=version)
+            zip_filepath_data=version)

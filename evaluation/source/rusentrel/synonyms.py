@@ -9,7 +9,7 @@ class RuSentRelSynonymsCollectionHelper(object):
         it = RuSentRelIOUtils.iter_from_zip(
             inner_path=RuSentRelIOUtils.get_synonyms_innerpath(),
             process_func=lambda input_file: iter_synonym_groups(input_file),
-            version=version)
+            zip_filepath_data=version)
 
         for group in it:
             yield group

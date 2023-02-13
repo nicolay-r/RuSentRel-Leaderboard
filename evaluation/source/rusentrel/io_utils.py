@@ -1,3 +1,4 @@
+import enum
 from os import path
 
 from enum import Enum
@@ -15,8 +16,8 @@ class RuSentRelIOUtils(ZipArchiveUtils):
 
     @staticmethod
     def get_archive_filepath(version):
-        assert(version, str)
-        return path.join(RuSentRelIOUtils.get_data_root(), "rusentrel-{}.zip".format(version))
+        assert(isinstance(version, enum.Enum))
+        return path.join(RuSentRelIOUtils.get_data_root(), "rusentrel-{}.zip".format(version.value))
 
     # region internal methods
 
