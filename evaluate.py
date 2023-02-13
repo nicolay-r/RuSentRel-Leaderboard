@@ -21,6 +21,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Submission evaluation for RuSentRel dataset.")
 
     parser.add_argument('--input', dest='input', type=str, default=None, help='Input file')
+    parser.add_argument('--mode', dest='eval_mode', type=str, default="extraction",
+                        choices=['extraction', 'classification'],
+                        help='Input file')
 
     # Parsing arguments.
     args = parser.parse_args()
@@ -31,7 +34,7 @@ if __name__ == '__main__':
 
     results = args.input
 
-    eval_mode = EvaluationModes.Classification
+    eval_mode = EvaluationModes.Extraction if args.eval_mode == 'extraction' else EvaluationModes.Classification
 
     # Setup an experiment labels formatter.
     labels_formatter = RuSentRelLabelsFormatter()
