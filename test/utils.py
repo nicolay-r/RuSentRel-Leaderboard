@@ -20,10 +20,14 @@ class ZippedResultsIOUtils(ZipArchiveUtils):
         return filepath
 
     @staticmethod
-    def iter_doc_ids(filepath_or_version):
+    def iter_doc_ids(filepath_or_version, doc_ids_filter=None):
+        assert(callable(doc_ids_filter) or doc_ids_filter is None)
         for f_name in ZippedResultsIOUtils.iter_filenames_from_zip(filepath_or_version):
-            doc_id_str = f_name.split('.')[0]
-            yield int(doc_id_str)
+            doc_id_int = int(f_name.split('.')[0])
+            if doc_ids_filter is not None:
+                if not doc_ids_filter(doc_id_int):
+                    continue
+            yield doc_id_int
 
     @staticmethod
     def iter_doc_opinions(doc_id, filepath_or_version, labels_formatter):

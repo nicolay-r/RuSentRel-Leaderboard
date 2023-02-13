@@ -79,7 +79,7 @@ class TestRuSentRelEvaluation(unittest.TestCase):
 
         # Iter cmp opinions.
         cmp_pairs_iter = OpinionCollectionsToCompareUtils.iter_comparable_collections(
-            doc_ids=ZippedResultsIOUtils.iter_doc_ids(res_version),
+            doc_ids=ZippedResultsIOUtils.iter_doc_ids(filepath_or_version=res_version),
             read_etalon_collection_func=lambda doc_id: OpinionCollection(
                 opinions=RuSentRelOpinionCollection.iter_opinions_from_doc(
                     doc_id=doc_id,
