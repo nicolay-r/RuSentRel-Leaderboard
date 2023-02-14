@@ -80,6 +80,11 @@ The result assessment organized in experiments:
 |              |            |                             |             |             |
 |Expert Agreement<sup>[\**](#footnote2)</sup> [[1]](#link1)                      | 55.0       |55.0                         |-            |-            |
 |                        |            |                             |             |             |
+|ChatGPT zero-shot with promptings<sup>[\***](#footnote2)</sup> [[7]](#link7)  |            |                             |             |             |
+|                        |            |                             |             |             |
+|ChatGPT<sub>avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
+|ChatGPT<sub>first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
+|                        |            |                             |             |             |
 |*Distant Supervision*<sub>RA-2.0-large</sub> for Language Models (BERT-based) [[6]](#link6)  |            |                             |             |             |
 |[<sub>pt</sub> -- pretrained, <sub>ft</sub> -- fine-tunded]  |            |                             |             |             |
 |SentenceRuBERT (NLI<sub>pt</sub> + NLI<sub>ft</sub>) |**39.0**    |38.0                     |70.2         |67.7         |
@@ -154,6 +159,10 @@ The result assessment organized in experiments:
 <a name="footnote2">**</a>: We asked another super-annotator to label the collection, and compared her annotation with our gold standard using average F-measure of positive and negative classes in the same way as for
 automatic approaches. In such a way, we can reveal the upper border for automatic
 algorithms. We obtained that F-measure of human labeling. [[1]](#link1)
+
+<a name="footnote3">***</a>: We consider translation into english samples via the [arekit-sampler](arekit-sources-sampler) by translating texts into 
+english first, and then wrapping them into prompts. We consider a `k`-words distance (`50` by default, in english) between words as a upper bound for pairs organization;
+because of the latter and prior standards, results might be lower (translation increases distance in words). 
 
 [Back to Top](#contents)
 
@@ -236,6 +245,11 @@ Proceedings of the Institute for System Programming of the RAS (Proceedings of I
 [[paper]](https://nicolay-r.github.io/website/data/rusnachenko2021language.pdf)
 [[code-networks]](https://github.com/nicolay-r/neural-networks-for-attitude-extraction)
 [[code-bert]](https://github.com/nicolay-r/bert-for-attitude-extraction-with-ds)
+
+<a name="link7">[7]</a>
+**Bowen Zhang, Daijun Ding, Liwen Jing**
+*How would Stance Detection Techniques Evolve after the Launch of ChatGPT?*
+[[paper]](https://arxiv.org/pdf/2212.14548.pdf)
 
 
 [Back to Top](#contents)
