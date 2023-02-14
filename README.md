@@ -20,6 +20,7 @@ especially!
 ## Contents
 * [Task](#task)
 * [Approaches](#approaches)
+* [Submission Evaluation](#submission-evaluation)
 * [Leaderboard](#leaderboard)
     * [Neural Networks Optimization](#neural-networks-optimization)
     * [Evaluator](#evaluator)
@@ -50,6 +51,16 @@ We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes
 * BERT-based language models [[code]](https://github.com/nicolay-r/bert-for-attitude-extraction-with-ds);
 * Neural Networks with (and w/o) Attention mechanism [[code]](https://github.com/nicolay-r/neural-networks-for-attitude-extraction);
 * Conventional Machine Learning methods [[code]](https://github.com/nicolay-r/sentiment-relation-classifiers);
+
+[Back to Top](#contents)
+
+## Submission Evaluation
+
+Please use `evaluate.py` script. 
+For example, for the ChatGPT submission results:
+```python
+python3 evaluate.py --input data/chatgpt-avg.zip --mode classification --split cv3
+```
 
 [Back to Top](#contents)
  
