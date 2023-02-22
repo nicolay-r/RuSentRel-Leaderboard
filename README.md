@@ -1,4 +1,4 @@
-# RuSentRel leaderboard 
+# RuSentRel Leaderboard 
 
 
 **Dataset description**: RuSentRel collection consisted of analytical articles from Internet-portal `inosmi.ru`. 
