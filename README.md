@@ -23,7 +23,6 @@ especially!
 * [Submission Evaluation](#submission-evaluation)
 * [Leaderboard](#leaderboard)
     * [Neural Networks Optimization](#neural-networks-optimization)
-    * [Evaluator](#evaluator)
 * [Related works](#related-works)
 * [References](#references)
 
@@ -55,6 +54,12 @@ We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes
 [Back to Top](#contents)
 
 ## Submission Evaluation
+
+![](https://img.shields.io/badge/Python-3.6-brightgreen.svg)
+
+Source code exported from AREkit-0.21.1 library and yields of: 
+* [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
+* [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
 Please use `evaluate.py` script. 
 For example, for the ChatGPT submission results:
@@ -181,16 +186,6 @@ Therefore, for gradients calculation within bags, we choose `avg` function inste
 The assumption here is to consider other synonymous attitudes during the gradients calculation procedure.
 We use `BagSize > 1` in earlier work [Rusnachenko, 2018](https://github.com/nicolay-r/sentiment-pcnn/tree/clls-2018)
 In the latest experiments, we consider `BagSize = 1` and therefore don't exploit bag values averaging.
-
-[Back to Top](#contents)
-
-### Evaluator
-
-![](https://img.shields.io/badge/Python-3.6-brightgreen.svg)
-
-Source code exported from AREkit-0.21.1 library and yields of: 
-* [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
-* [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
 [Back to Top](#contents)
 
