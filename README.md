@@ -87,6 +87,7 @@ The result assessment organized in experiments:
 |                        |            |                             |             |             |
 |ChatGPT zero-shot with promptings<sup>[\***](#footnote2)</sup> [[7]](#link7)  |            |                             |             |             |
 |                        |            |                             |             |             |
+|ChatGPT<sub>avg</sub> [200 words distance]  |  37.7          |  39.6                   |            |                  |
 |ChatGPT<sub>avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
 |ChatGPT<sub>first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
 |                        |            |                             |             |             |
