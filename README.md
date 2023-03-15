@@ -57,7 +57,7 @@ We implement [AREkit](https://github.com/nicolay-r/AREkit) toolkit which becomes
 
 ![](https://img.shields.io/badge/Python-3.6-brightgreen.svg)
 
-Source code exported from AREkit-0.21.1 library and yields of: 
+Source code exported from [AREkit-0.21.0 library](https://github.com/nicolay-r/AREkit/tree/0.21.0-rc) and yields of: 
 * [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
 * [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
@@ -87,9 +87,9 @@ The result assessment organized in experiments:
 |                        |            |                             |             |             |
 |ChatGPT zero-shot with promptings<sup>[\***](#footnote2)</sup> [[7]](#link7)  |            |                             |             |             |
 |                        |            |                             |             |             |
-|ChatGPT<sub>avg</sub> [200 words distance]  |  37.7          |  39.6                   |            |                  |
-|ChatGPT<sub>avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
-|ChatGPT<sub>first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
+|ChatGPT<sub>GPT-3, avg</sub> [200 words distance]  |  37.7          |  39.6                   |            |                  |
+|ChatGPT<sub>GPT-3, avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
+|ChatGPT<sub>GPT-3, first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
 |                        |            |                             |             |             |
 |*Distant Supervision*<sub>RA-2.0-large</sub> for Language Models (BERT-based) [[6]](#link6)  |            |                             |             |             |
 |[<sub>pt</sub> -- pretrained, <sub>ft</sub> -- fine-tunded]  |            |                             |             |             |
