@@ -1,5 +1,9 @@
 # RuSentRel Leaderboard 
+[![](https://img.shields.io/badge/AREkit--ss_Compatible-0.23.1-purple.svg)](https://github.com/nicolay-r/arekit-ss#usage)
 
+> 📓 **Update 01 October 2023**: this collection **is now available in [arekit-ss](https://github.com/nicolay-r/arekit-ss)**
+> for a [quick sampling](https://github.com/nicolay-r/arekit-ss#usage) of contexts with all subject-object relation mentions with just **single script into
+> `JSONL/CSV/SqLite`** including (optional) language transferring 🔥 [[Learn more ...]](https://github.com/nicolay-r/arekit-ss#usage)
 
 **Dataset description**: RuSentRel collection consisted of analytical articles from Internet-portal `inosmi.ru`. 
 These are translated into Russian texts in the domain of international politics obtained from foreign authoritative sources.
