@@ -170,7 +170,7 @@ The result assessment organized in experiments:
 automatic approaches. In such a way, we can reveal the upper border for automatic
 algorithms. We obtained that F-measure of human labeling. [[1]](#link1)
 
-<a name="footnote3">***</a>: We consider translation into english samples via the [arekit-sampler](arekit-sources-sampler) by translating texts into 
+<a name="footnote3">***</a>: We consider translation into english samples via the [arekit-ss](https://github.com/nicolay-r/arekit-ss) by translating texts into 
 english first, and then wrapping them into prompts. We consider a `k`-words distance (`50` by default, in english) between words as a upper bound for pairs organization;
 because of the latter and prior standards, results might be lower (translation increases distance in words). 
 
