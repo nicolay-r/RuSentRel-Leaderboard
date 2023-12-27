@@ -65,8 +65,8 @@ Source code exported from [AREkit-0.21.0 library](https://github.com/nicolay-r/A
 * [Evaluation](evaluation) directory for details of the evaluator implementation and the related dependencies;
 * [Test](test) directory, which includes test scripts that allow applying evaluator for the archived [results](test/data).
 
-Please use `evaluate.py` script. 
-For example, for the ChatGPT submission results:
+Use `evaluate.py` to evaluate your submissions. 
+Below is an example for assessing the results of `ChatGPT-3.5-0613`:
 ```python
 python3 evaluate.py --input data/chatgpt-avg.zip --mode classification --split cv3
 ```
