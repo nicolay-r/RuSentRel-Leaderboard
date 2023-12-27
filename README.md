@@ -91,9 +91,9 @@ The result assessment organized in experiments:
 |                        |            |                             |             |             |
 |ChatGPT zero-shot with promptings<sup>[\***](#footnote2)</sup> [[7]](#link7)  |            |                             |             |             |
 |                        |            |                             |             |             |
-|ChatGPT<sub>GPT-3, avg</sub> [200 words distance]  |  37.7          |  39.6                   |            |                  |
-|ChatGPT<sub>GPT-3, avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
-|ChatGPT<sub>GPT-3, first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
+|ChatGPT<sub>GPT-3.5-0613, avg</sub> [200 words distance]  |  37.7          |  39.6                   |            |                  |
+|ChatGPT<sub>GPT-3.5-0613, avg</sub> [50 words distance]  |            |                              |66.19       |**74.47**         |
+|ChatGPT<sub>GPT-3.5-0613, first</sub> [50 words distance]  |            |                              |69.23       |74.09         |
 |                        |            |                             |             |             |
 |*Distant Supervision*<sub>RA-2.0-large</sub> for Language Models (BERT-based) [[6]](#link6)  |            |                             |             |             |
 |[<sub>pt</sub> -- pretrained, <sub>ft</sub> -- fine-tunded]  |            |                             |             |             |
